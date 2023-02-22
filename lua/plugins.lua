@@ -79,4 +79,13 @@ return {
       })
     end,
   },
+  -- treesitter
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  -- 主题
+  {
+    "glepnir/zephyr-nvim",
+    config = function()
+      require('zephyr')
+    end,
+  },
 }
