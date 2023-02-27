@@ -32,6 +32,7 @@ map('n', '<leader>sS', ':vsplit<CR>',{desc = '左右分屏'})
 -- 导航栏
 map('n', '<leader>te', ':NeoTreeFocusToggle<CR>',{desc = '导航栏'})
 map('n', '<leader>tg', ':LazyGit<CR>',{desc = 'GIT'})
+map('n', '<leader>tb', ':Neotree float buffers<CR>',{desc = 'GIT'})
 
 -- 关闭
 map('n', '<leader>cw', ':close<CR>',{desc = '关闭窗口'})
