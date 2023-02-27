@@ -16,14 +16,18 @@ local opt = {
 
 map('i','<C-f>','<right>',silent_opt)
 map('i','<C-b>','<left>',silent_opt)
+map('i','<C-a>','<ESC>I',silent_opt)
+map('i','<C-e>','<ESC>A',silent_opt)
 
-map('n','<leader>s', ':w<CR>',{desc = '保存'})
+map('n','<leader>w', ':w<CR>',{desc = '保存'})
 map('n','<leader>q', ':q<CR>',silent_opt)
 
 map('n', '<leader>r', ':luafile %<CR>',silent_opt)
 
 -- 窗口创建
-map('n', '<leader>ws', ':split<CR>',{desc = '上下分屏'})
-map('n', '<leader>wS', ':vsplit<CR>',{desc = '左右分屏'})
+map('n', '<leader>ss', ':split<CR>',{desc = '上下分屏'})
+map('n', '<leader>sS', ':vsplit<CR>',{desc = '左右分屏'})
 
 
+map('n', '<leader>cw', ':close<CR>',{desc = '导航栏'})
+map('n', '<leader>cb', ':bdelete<CR>',{desc = '导航栏'})
