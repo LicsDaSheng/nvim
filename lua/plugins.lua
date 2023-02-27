@@ -88,4 +88,13 @@ return {
       require('zephyr')
     end,
   },
+  -- NvimTree
+  {
+    "kyazdani42/nvim-tree.lua",
+    config = function()
+      require("nvim-tree").setup({})
+    end,
+    enabled = true,
+    cmd = { "NvimTreeToggle", "NvimTreeOpen", "NvimTreeFocus", "NvimTreeFindFileToggle" },
+  },
 }

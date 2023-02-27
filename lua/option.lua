@@ -31,3 +31,12 @@ vim.o.list = true
 vim.o.listchars = 'space:·'
 
 vim.o.showtabline = 2 
+
+-- 禁止创建备份文件
+vim.o.backup = false
+vim.o.writebackup = false
+vim.o.swapfile = false
+
+
+vim.o.list = true
+vim.o.listchars = 'space:·'
