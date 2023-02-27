@@ -28,8 +28,10 @@ map('n', '<leader>r', ':luafile %<CR>',silent_opt)
 map('n', '<leader>ss', ':split<CR>',{desc = '上下分屏'})
 map('n', '<leader>sS', ':vsplit<CR>',{desc = '左右分屏'})
 
+-- toggle
 -- 导航栏
-map('n', '<leader>e', ':NeoTreeShowToggle<CR>',{desc = '导航栏'})
+map('n', '<leader>te', ':NeoTreeFocusToggle<CR>',{desc = '导航栏'})
+map('n', '<leader>tg', ':LazyGit<CR>',{desc = 'GIT'})
 
 -- 关闭
 map('n', '<leader>cw', ':close<CR>',{desc = '关闭窗口'})
