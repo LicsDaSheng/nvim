@@ -40,3 +40,20 @@ vim.o.swapfile = false
 
 vim.o.list = true
 vim.o.listchars = 'space:·'
+
+vim.o.guifont = "source Code Pro:h18"
+vim.opt.linespace = 0
+
+------ neovide 配置
+-- 全屏
+vim.g.neovide_fullscreen = false
+-- 显示帧时间图
+vim.g.neovide_profiler = false
+vim.g.neovide_input_use_logo = true
+
+vim.g.neovide_cursor_animation_length = 0.10
+
+-- vim.g.neovide_cursor_vfx_mode = "ripple"
+
+-- vim.g.neovide_cursor_vfx_mode = "wireframe"
+vim.g.neovide_cursor_vfx_mode = "sonicboom"

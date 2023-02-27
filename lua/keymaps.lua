@@ -28,6 +28,9 @@ map('n', '<leader>r', ':luafile %<CR>',silent_opt)
 map('n', '<leader>ss', ':split<CR>',{desc = '上下分屏'})
 map('n', '<leader>sS', ':vsplit<CR>',{desc = '左右分屏'})
 
+-- 导航栏
+map('n', '<leader>e', ':NvimTreeToggle<CR>',{desc = '导航栏'})
 
-map('n', '<leader>cw', ':close<CR>',{desc = '导航栏'})
-map('n', '<leader>cb', ':bdelete<CR>',{desc = '导航栏'})
+-- 关闭
+map('n', '<leader>cw', ':close<CR>',{desc = '关闭窗口'})
+map('n', '<leader>cb', ':bdelete<CR>',{desc = '关闭buffer'})
