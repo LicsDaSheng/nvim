@@ -14,6 +14,8 @@ local opt = {
 }
 
 
+map('i','<C-j>','<down>',silent_opt)
+map('i','<C-k>','<up>',silent_opt)
 map('i','<C-f>','<right>',silent_opt)
 map('i','<C-b>','<left>',silent_opt)
 map('i','<C-a>','<ESC>I',silent_opt)
