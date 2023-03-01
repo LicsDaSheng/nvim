@@ -11,3 +11,6 @@ map('i','<C-e>','<esc>A')
 
 
 map('n', '<leader>e', ':Neotree reveal toggle<CR>')
+map('n', '<leader>h', ':nohlsearch<CR>')
+map('n', '<leader>q', ':wq<CR>')
+
