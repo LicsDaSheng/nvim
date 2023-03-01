@@ -35,4 +35,30 @@ return {
     },
     config = require("plugins.lualine"),
   },
+  -- lsp config
+  {
+      "neovim/nvim-lspconfig",
+      --lazy = true,
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    config = require("plugins.cmp"),
+    event = { "InsertEnter", "CmdlineEnter" },
+    dependencies = {
+      "cmp-nvim-lsp",
+      "cmp-buffer",
+      "cmp-path",
+    },
+  },
+  { "hrsh7th/cmp-nvim-lsp", lazy = true },
+  { "hrsh7th/cmp-buffer", lazy = true },
+  { "hrsh7th/cmp-path", lazy = true },
+  -- java语言支持
+  {
+    "mfussenegger/nvim-jdtls",
+    config = function()
+      require("lsp.jtdls")
+    end,
+    --lazy = true,
+  },
 }
