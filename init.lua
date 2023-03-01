@@ -1,3 +1,3 @@
 require("core.option")
 require("core.plugin")
-require("core.plugin-config")
+require("core.plugins-config")
