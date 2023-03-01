@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/Users/scottlee/.local/share/nvim/site/pack/packer/start/nui.nvim",
     url = "https://github.com/MunifTanjim/nui.nvim"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/Users/scottlee/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
   ["nvim-web-devicons"] = {
     loaded = false,
     needs_bufread = false,
