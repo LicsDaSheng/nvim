@@ -1,4 +1,3 @@
----@diagnostic disable: undefined-global
 local function map(mode, lhs, rhs, opts)
     opts = opts or {}
     opts.silent = opts.silent ~= false
@@ -29,13 +28,14 @@ map('n', '<leader>gg', ':LazyGit<CR>')
 local P = {}
 
 local function map_lsp_keys()
+    map("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
+    map("n", "<leader>rn", "<cmd>Lspsaga rename<CR>")
     map('n', 'gD', vim.lsp.buf.declaration)
-    map('n', 'gd', vim.lsp.buf.definition)
+    map('n', 'gd', '<cmd>Lspsaga peek_definition<CR>')
     map('n', 'K', vim.lsp.buf.hover)
     map('n', 'gi', vim.lsp.buf.implementation)
     map('n', '<C-k>', vim.lsp.buf.signature_help)
     map('n', '<space>D', vim.lsp.buf.type_definition)
-    map('n', '<space>rn', vim.lsp.buf.rename)
     map('n', '<space>ca', vim.lsp.buf.code_action)
     map('n', 'gr', require('telescope.builtin').lsp_references)
     map('n', '<space>bf', function() vim.lsp.buf.format { async = true } end)
@@ -48,9 +48,9 @@ function P.map_java_keys()
     local spring_boot_run = 'mvn spring-boot:run -Dspring-boot.run.profiles=local'
     local command = ':lua require("toggleterm").exec("' .. spring_boot_run .. '")<CR>'
 
-    key_map('n', '<leader>rj', command)
-    key_map('n', '<leader>oi', ':lua require("jdtls".organize_imports()<CR>')
-    key_map('n', '<leader>jc', ':lua require("jdtls".compile("incremental")<CR>')
+    map('n', '<leader>rj', command)
+    map('n', '<leader>oi', ':lua require("jdtls".organize_imports()<CR>')
+    map('n', '<leader>jc', ':lua require("jdtls".compile("incremental")<CR>')
 end
 
 function P.map_lua_keys()

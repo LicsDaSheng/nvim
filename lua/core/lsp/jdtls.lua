@@ -1,16 +1,11 @@
----@diagnostic disable: undefined-global
--- Java Language Server configuration.
--- Locations:
--- 'nvim/ftplugin/java.lua'.
--- 'nvim/lang-servers/intellij-java-google-style.xml'
+local jdtls = require('lspconfig').jdtls
 
-local jdtls_ok, _ = pcall(require, "jdtls")
-if not jdtls_ok then
-    vim.notify "JDTLS not found, install with `:LspInstall jdtls`"
+if jdtls == nil then
+    print('jdtls is not found')
     return
 end
 
--- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
+
 local jdtls_path = vim.fn.stdpath('data') .. "/mason/packages/jdtls"
 local path_to_lsp_server = jdtls_path .. "/config_mac"
 local path_to_plugins = jdtls_path .. "/plugins/"
@@ -22,15 +17,10 @@ local root_dir = require("jdtls.setup").find_root(root_markers)
 if root_dir == "" then
     return
 end
-
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 local workspace_dir = vim.fn.stdpath('data') .. '/site/java/workspace-root/' .. project_name
 os.execute("mkdir " .. workspace_dir)
-
--- Main Config
-local config = {
-    -- The command that starts the language server
-    -- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
+jdtls.setup {
     cmd = {
         '/Users/scottlee/Library/Java/JavaVirtualMachines/corretto-17.0.6/Contents/Home/bin/java',
         '-Declipse.application=org.eclipse.jdt.ls.core.id1',
@@ -43,17 +33,11 @@ local config = {
         '--add-modules=ALL-SYSTEM',
         '--add-opens', 'java.base/java.util=ALL-UNNAMED',
         '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-
         '-jar', path_to_jar,
         '-configuration', path_to_lsp_server,
         '-data', workspace_dir,
     },
-    -- This is the default if not provided, you can remove it. Or adjust as needed.
-    -- One dedicated LSP server & client will be started per unique root_dir
     root_dir = root_dir,
-    -- Here you can configure eclipse.jdt.ls specific settings
-    -- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
-    -- for a list of options
     settings = {
         java = {
             home = '/Users/scottlee/Library/Java/JavaVirtualMachines/corretto-17.0.6/Contents/Home/',
@@ -108,7 +92,6 @@ local config = {
                 "org"
             },
         },
-        extendedClientCapabilities = extendedClientCapabilities,
         sources = {
             organizeImports = {
                 starThreshold = 9999,
@@ -128,20 +111,19 @@ local config = {
     init_options = {
         bundles = {},
     },
-}
-
-config['on_attach'] = function(client, bufnr)
-    require 'core.keymaps'.map_java_keys(bufnr);
-    require "lsp_signature".on_attach({
-        bind = true, -- This is mandatory, otherwise border config won't get registered.
-        floating_window_above_cur_line = false,
-        padding = '',
-        handler_opts = {
-            border = "rounded"
+    on_attach = function(client,bufnr)
+        
+    end,
+    capabilities = {
+        workspace = {
+            configuration = true
+        },
+        textDocument = {
+            completion = {
+                completionItem = {
+                    snippetSupport = true
+                }
+            }
         }
-    }, bufnr)
-end
-
--- This starts a new client & server,
--- or attaches to an existing client & server depending on the `root_dir`.
-require('jdtls').start_or_attach(config)
+    },
+}
