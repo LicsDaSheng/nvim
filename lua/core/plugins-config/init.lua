@@ -1,0 +1,8 @@
+require("core.plugins-config.colorscheme")
+require("core.plugins-config.lualine")
+require("core.plugins-config.neotree")
+require("core.plugins-config.treesitter")
+require("core.plugins-config.telescope")
+require("core.plugins-config.lsp_config")
+require("core.plugins-config.gitsigns")
+require("core.plugins-config.indent")
