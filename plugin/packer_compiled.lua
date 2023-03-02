@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/Users/scottlee/.local/share/nvim/site/pack/packer/start/nui.nvim",
     url = "https://github.com/MunifTanjim/nui.nvim"
   },
+  ["nvim-jdtls"] = {
+    loaded = true,
+    path = "/Users/scottlee/.local/share/nvim/site/pack/packer/start/nvim-jdtls",
+    url = "https://github.com/mfussenegger/nvim-jdtls"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/scottlee/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",

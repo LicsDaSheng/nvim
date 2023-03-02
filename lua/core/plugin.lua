@@ -42,6 +42,8 @@ return require('packer').startup(function(use)
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
   }
+
+  use { 'mfussenegger/nvim-jdtls' }
   use {
     'lewis6991/gitsigns.nvim',
     --tag = 'release',
