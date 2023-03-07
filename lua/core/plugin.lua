@@ -69,9 +69,9 @@ return require('packer').startup(function(use)
     use { 'hrsh7th/nvim-cmp' }
     use { 'hrsh7th/cmp-vsnip' }
     use { 'hrsh7th/vim-vsnip' }
-use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-  require("toggleterm").setup()
-end}
+    use { "akinsho/toggleterm.nvim", tag = '*', config = function()
+        require("toggleterm").setup()
+    end }
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
