@@ -31,6 +31,7 @@ local function map_lsp_keys()
     map("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
     map("n", "<leader>rn", "<cmd>Lspsaga rename<CR>")
     map('n', 'gd', '<cmd>Lspsaga peek_definition<CR>')
+    map('n', '<leader>td', vim.lsp.buf.definition)
     map('n', 'K', '<cmd>Lspsaga hover_doc<CR>')
     map('n', 'gi', vim.lsp.buf.implementation)
     map('n', '<space>D', vim.lsp.buf.type_definition)
@@ -53,6 +54,10 @@ end
 
 function P.map_lua_keys()
     map_lsp_keys()
+end
+function P.map_go_keys()
+    map_lsp_keys()
+    map('n','<leader>rj', ':lua require("toggleterm").exec("go run main.go")<CR>')
 end
 
 return P
