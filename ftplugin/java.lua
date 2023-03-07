@@ -25,7 +25,18 @@ end
 
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 local workspace_dir = vim.fn.stdpath('data') .. '/site/java/workspace-root/' .. project_name
-os.execute("mkdir " .. workspace_dir)
+
+function file_exists(path)
+    local file = io.open(path, "rb")
+
+    if file then file:close() end
+
+    return file ~= nil
+end
+
+if not file_exists(workspace_dir) then
+    os.execute("mkdir " .. workspace_dir)
+end
 
 -- Main Config
 local config = {
