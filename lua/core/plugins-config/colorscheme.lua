@@ -1,2 +1,8 @@
 vim.o.termguicolors = true
-vim.cmd [[ colorscheme gruvbox ]]
+
+
+--local theme = 'gruvbox'
+local theme = 'tokyonight-moon'
+vim.cmd('colorscheme ' .. theme)
+
+return theme
