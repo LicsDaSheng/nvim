@@ -30,12 +30,11 @@ local P = {}
 local function map_lsp_keys()
     map("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
     map("n", "<leader>rn", "<cmd>Lspsaga rename<CR>")
-    map('n', 'gd', '<cmd>Lspsaga peek_definition<CR>')
+    map('n', 'gd', '<cmd>Lspsaga lsp_finder<CR>')
     map('n', '<leader>td', vim.lsp.buf.definition)
     map('n', 'K', '<cmd>Lspsaga hover_doc<CR>')
-    map('n', 'gi', vim.lsp.buf.implementation)
     map('n', '<space>D', vim.lsp.buf.type_definition)
-    map('n', '<space>ca', vim.lsp.buf.code_action)
+    map('n', '<space>ca', '<cmd>Lspsaga code_action<CR>')
     map('n', 'gr', require('telescope.builtin').lsp_references)
     map('n', '<space>bf', function() vim.lsp.buf.format { async = true } end)
 end
@@ -48,8 +47,8 @@ function P.map_java_keys()
     local command = ':lua require("toggleterm").exec("' .. spring_boot_run .. '")<CR>'
 
     map('n', '<leader>rj', command)
-    map('n', '<leader>oi', ':lua require("jdtls".organize_imports()<CR>')
-    map('n', '<leader>jc', ':lua require("jdtls".compile("incremental")<CR>')
+    map('n', '<leader>oi', ':lua require("jdtls").organize_imports()<CR>')
+    map('n', '<leader>jc', ':lua require("jdtls").compile("incremental")<CR>')
 end
 
 function P.map_lua_keys()
