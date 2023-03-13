@@ -25,6 +25,8 @@ map('n', '<leader>fb', builtin.buffers, {})
 
 map('n', '<leader>gg', ':LazyGit<CR>')
 
+map('n', '<leader>te','<cmd>TroubleToggle workspace_diagnostics<CR>')
+map('n', '<leader>be','<cmd>TroubleToggle document_diagnostics<CR>')
 local P = {}
 
 local function map_lsp_keys()
