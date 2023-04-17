@@ -1,6 +1,5 @@
 # nvim
-My nvim config
-
+基于lunarvim的nvim配置，支持java、golang 语言coding、debug
 ## 参考资料
  - [在 neovim 中使用 Lua](https://github.com/glepnir/nvim-lua-guide-zh)
 
