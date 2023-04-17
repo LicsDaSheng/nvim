@@ -52,18 +52,7 @@ require("user.formatters")
 --   },
 -- }
 
--- -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
-lvim.plugins = {
-  {
-    "folke/trouble.nvim",
-    cmd = "TroubleToggle",
-  },
-  "mfussenegger/nvim-jdtls",
-  "rcarriga/nvim-dap-ui",
-  "olexsmir/gopher.nvim",
-  "leoluz/nvim-dap-go",
-}
-
+require("user.plugin")
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
 -- vim.api.nvim_create_autocmd("FileType", {
 --   pattern = "zsh",
