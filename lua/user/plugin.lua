@@ -1,5 +1,6 @@
 -- -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
 lvim.plugins = {
+  "morhetz/gruvbox",
   {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
