@@ -11,7 +11,6 @@ lvim.plugins = {
     cmd = "TroubleToggle",
   },
   "mfussenegger/nvim-jdtls",
-  "rcarriga/nvim-dap-ui",
   "olexsmir/gopher.nvim",
   "leoluz/nvim-dap-go",
   {

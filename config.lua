@@ -21,8 +21,8 @@ lvim.format_on_save = {
 
 require("user.mappings")
 -- -- Change theme settings
--- lvim.colorscheme = "lunar"
-lvim.colorscheme = "gruvbox"
+lvim.colorscheme = "lunar"
+-- lvim.colorscheme = "gruvbox"
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
@@ -32,7 +32,6 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.lualine.sections.lualine_a = { 'mode' }
 
 lvim.builtin.treesitter.highlight.enabled = true
-lvim.builtin.dap.active = true
 
 -- Automatically install missing parsers when entering buffer
 lvim.builtin.treesitter.auto_install = true
