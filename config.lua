@@ -33,6 +33,7 @@ lvim.builtin.lualine.sections.lualine_a = { 'mode' }
 
 lvim.builtin.treesitter.highlight.enabled = true
 
+lvim.builtin.telescope.theme = "ivy"
 -- Automatically install missing parsers when entering buffer
 lvim.builtin.treesitter.auto_install = true
 
@@ -43,14 +44,14 @@ lvim.builtin.treesitter.ensure_installed = { "comment", "markdown_inline", "rege
 
 require("user.lsp")
 require("user.formatters")
--- local linters = require "lvim.lsp.null-ls.linters"
--- linters.setup {
---   { command = "flake8", filetypes = { "python" } },
---   {
---     command = "shellcheck",
---     args = { "--severity", "warning" },
---   },
--- }
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup {
+  { command = "flake8", filetypes = { "python" } },
+  {
+    command = "shellcheck",
+    args = { "--severity", "warning" },
+  },
+}
 
 require("user.plugin")
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
@@ -62,3 +63,5 @@ require("user.plugin")
 --   end,
 -- })
 require("user.dap-ui")
+
+require("user.user_command")

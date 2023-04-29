@@ -13,3 +13,5 @@ lvim.builtin.which_key.mappings["mc"] = {
   "Maven compile ignore test" }
 lvim.builtin.which_key.mappings["mC"] = { "<cmd>TermExec cmd='mvn -T3C compile -e -U  -Dfile.encoding=UTF-8'<CR>",
   "Maven compile with test" }
+
+lvim.keys.normal_mode["<C-m>"] = "<cmd>Telescope commands<CR>"
