@@ -15,3 +15,8 @@ lvim.builtin.which_key.mappings["mC"] = { "<cmd>TermExec cmd='mvn -T3C compile -
   "Maven compile with test" }
 
 lvim.keys.normal_mode["<C-m>"] = "<cmd>Telescope commands<CR>"
+
+lvim.lsp.buffer_mappings.normal_mode['gd'] = {
+  '<cmd> lua require("telescope.builtin").lsp_definitions(require("telescope.themes").get_ivy())<CR>' }
+lvim.lsp.buffer_mappings.normal_mode['gr'] = {
+  '<cmd> lua require("telescope.builtin").lsp_references(require("telescope.themes").get_ivy())<CR>' }
